@@ -1,0 +1,19 @@
+.product.wrap__main-right {
+    grid-area: 1/1/2/2;
+}
+
+.product.wrap__main-left {
+    grid-column: 2/5;
+}
+
+.product-main__wrap-top {
+    display: flex;
+    justify-content: space-between;
+}
+
+.product-main__title {
+    background-color: #F5F5F5;
+    padding: 10px;
+    font-size: 1.7rem;
+    font-weight: 700;
+}
