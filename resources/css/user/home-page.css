@@ -212,9 +212,11 @@
 }
 
 .wrap-item__item-title {
-    background-color: #01567f;
-    color: white;
-    font-size: 2rem;
+    background-color: #ecedee;
+    color: black;
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    font-weight: 500;
     padding: 5px 20px;
 }
 
@@ -222,7 +224,8 @@
     padding: 6px 20px;
     font-size: 1.5rem;
     font-weight: 400;
-    border: 1px solid #cce3ee;
+    border: 1px solid bisque;
+    text-transform: capitalize;
 }
 
 .wrap-item__item-link:hover {
@@ -231,7 +234,7 @@
 }
 
 .wrap-item__item-count {
-    background-color: #01567f;
+    background-color: #2d6079;
     line-height: 1.5rem;
 }
 

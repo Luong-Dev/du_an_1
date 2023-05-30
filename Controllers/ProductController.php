@@ -74,7 +74,10 @@ function deleteProductControl()
         if ($res) {
             deleteProduct($id);
             $message['success'] = "Xóa thành công!";
-            header("location: $url");
+            echo "<script>
+                    alert('Không tồn tại danh mục có id này');
+                    window.location.href = '$url';
+                </script>";
         } else {
             echo "<script>
                         alert('Không tồn tại danh mục có id này');
@@ -124,6 +127,7 @@ function editProductControl()
 function updateProductControl()
 {
     include "./Views/admin/layouts/header.php";
+    $url = 'index?act=admin_products';
     if (isset($_POST['update']) && $_POST['update']) {
         // xét tồn tại các post, xét điều kiện validate, nghiên cứu làm 1 file validate riêng
         $id = $_POST['idData'];
@@ -156,14 +160,17 @@ function updateProductControl()
 
         putProduct($code, $name, $regularPrice, $salePrice, $imageUrl, $imageAlt, $importTime, $shortDescription, $longDescription, $status, $categoryId, $id);
         $message['success'] = "Cập nhật thành công";
-        // cho bay về index
-        include "./Views/admin/product/edit.php";
-    } else {
         echo "<script>
-                alert('Thao tác sai, mời click vào thao tác sửa');
-            </script>";
-        $categories = getCategoriesInProduct();
-        include "./Views/admin/product/index.php";
+                    window.location.href = '$url';
+                    alert('Cập nhật thành công');
+                </script>";
+        // include "./Views/admin/product/edit.php";
+    } else {
+
+        echo "<script>
+                    alert('Thao tác sai');
+                    window.location.href = '$url';
+                </script>";
     }
     include "./Views/admin/layouts/footer.php";
 }
@@ -196,9 +203,53 @@ function updateProductControl()
 // }
 
 // user
-function productUserController(){
+function productUserControl()
+{
     include "./Views/user/layouts/header.php";
+    if (isset($_GET['category']) && is_numeric($_GET['category'])) {
+        $categoryId = $_GET['category'];
+        $productSearch = "";
 
+        $categories = getCategoriesInProduct();
+        $products = getProductsInUser($categoryId, $productSearch);
+    } else {
+        // echo "<script>
+        //         alert('Không tồn tại danh mục có id này');
+        //     </script>";
+        // $products = getProducts();
+        // $categories = getCategoriesInProduct();
+        // include "./Views/admin/products/index.php";
+    }
     include "./Views/user/product/index.php";
+    include "./Views/user/layouts/footer.php";
+}
+
+function productDetailUserControl()
+{
+    include "./Views/user/layouts/header.php";
+    $url = 'index?act=products';
+    if (isset($_GET['id']) && is_numeric($_GET['id'])) {
+        $id = $_GET['id'];
+        $product = getProduct($id);
+        if ($product) {
+            $categories = getCategoriesInProduct();
+            $categoryId = $product['category_id'];
+            $top10RelatedProducts = get10RelatedProducts($categoryId,$id);
+
+
+            global $arrStatus;
+            include "./Views/user/product/productDetail.php";
+        } else {
+            echo "<script>
+                    alert('Không tồn tại sản phẩm này');
+                    window.location.href = '$url';
+                </script>";
+        }
+    } else {
+        echo "<script>
+            alert('Không tồn tại sản phẩm này');
+            window.location.href = '$url';
+        </script>";
+    }
     include "./Views/user/layouts/footer.php";
 }

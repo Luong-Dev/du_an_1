@@ -29,6 +29,8 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Roboto', sans-serif;
+    font-size: 1.4rem;
+    font-weight: 400;
 }
 
 html {

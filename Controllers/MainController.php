@@ -16,9 +16,21 @@ function View($hamCall)
 }
 
 
-function homeUserController(){
+function homeUserControl(){
     include "./Views/user/layouts/header.php";
-
+    $categories = getCategoriesInProduct();
+    $products = getProductsInUser();
+    $topNewProducts = getProductsInUser(0,"","import_time",10);
+    $top4ViewProducts = getProductsInUser(0,"","view_number",4);
+    // $top4ViewProducts = getProductsInUser(0,"","view_number",4);
+    $top4SellingProducts = getProductsInUser(0,"","number_sold",4);
+    // $topSellingProducts = getProductsInUser(0,"","number_sold",4);
     include "./Views/user/home.php";
     include "./Views/user/layouts/footer.php";
+}
+
+function homeAdminControl(){
+    include "./Views/admin/layouts/header.php";
+    include "./Views/admin/home.php";
+    include "./Views/admin/layouts/footer.php";
 }

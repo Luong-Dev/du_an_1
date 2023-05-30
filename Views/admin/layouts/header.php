@@ -24,22 +24,25 @@
                             <a class="nav-link active" aria-current="page" href="#">Trang chủ</a>
                         </li> -->
                         <li class="nav-item">
-                            <a class="nav-link" aria-current="page" href="index.php">Trang chủ</a>
+                            <a class="nav-link" aria-current="page" href="index.php?act=admin">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="index?act=admin_categories">Danh mục</a>
+                            <a class="nav-link" href="index.php?act=admin_categories">Danh mục</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="index?act=admin_products">Hàng hóa</a>
+                            <a class="nav-link" href="index.php?act=admin_products">Hàng hóa</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="index?act=admin_accounts">Tài khoản</a>
+                            <a class="nav-link" href="index.php?act=admin_accounts">Tài khoản</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="index?act=admin_comments">Bình luận</a>
+                            <a class="nav-link" href="index.php?act=admin_comments">Bình luận</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="index?act=statistical">Thống kê</a>
+                            <a class="nav-link" href="index.php?act=statistical">Thống kê</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="index.php?act=">Trang khách hàng</a>
                         </li>
                         <!-- <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">

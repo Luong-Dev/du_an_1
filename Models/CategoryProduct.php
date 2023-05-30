@@ -3,7 +3,10 @@ include_once "./Models/Db.php";
 
 function getCategories()
 {
-    $sql = "SELECT * FROM `categories` ORDER BY id DESC";
+    $sql = "SELECT CG.id, CG.name , CG.description, CG.image_url,CG.image_alt, COUNT(PD.category_id) AS 'quantity_product' FROM `categories` AS CG
+    LEFT JOIN products AS PD ON CG.id = PD.category_id
+    GROUP BY CG.id
+    ORDER BY id DESC";
 
     return pdo_query($sql);
 }

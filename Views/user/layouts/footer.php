@@ -31,7 +31,7 @@
                         <h4 class="footer-news__tittle footer__tittles">Bài viết mới</h4>
                         <div class="footer-news__wrap">
                             <a href="" class="footer-news__img-link">
-                                <img src="../public/img/footer/4-kieu-trang-phuc-demin-hot-nhat.webp" alt="" class="footer-news__img">
+                                <img src="https://bizweb.dktcdn.net/100/451/884/articles/4-kieu-trang-phuc-demin-hot-nhat.jpg?v=1649173718847" alt="" class="footer-news__img">
                             </a>
                             <div class="footer-news__content">
                                 <a href="" class="footer-news__description">4 kiểu trang phục denim đang hot nhất hack mọi độ tuổi ...</a>
@@ -40,7 +40,7 @@
                         </div>
                         <div class="footer-news__wrap">
                             <a href="" class="footer-news__img-link">
-                                <img src="../public/img/footer/4-kieu-trang-phuc-demin-hot-nhat.webp" alt="" class="footer-news__img">
+                                <img src="https://bizweb.dktcdn.net/100/451/884/articles/meo-mac-quan-tay-dinh-cho-cac-nang.jpg?v=1649173643080" alt="" class="footer-news__img">
                             </a>
                             <div class="footer-news__content">
                                 <a href="" class="footer-news__description">4 kiểu trang phục denim đang hot nhất hack mọi độ tuổi ...</a>
@@ -49,7 +49,7 @@
                         </div>
                         <div class="footer-news__wrap">
                             <a href="" class="footer-news__img-link">
-                                <img src="../public/img/footer/4-kieu-trang-phuc-demin-hot-nhat.webp" alt="" class="footer-news__img">
+                                <img src="https://bizweb.dktcdn.net/100/451/884/articles/nha-thiet-ke-vi-dai-nam-2022.jpg?v=1649173565953" alt="" class="footer-news__img">
                             </a>
                             <div class="footer-news__content">
                                 <a href="" class="footer-news__description">4 kiểu trang phục denim đang hot nhất hack mọi độ tuổi ...</a>
@@ -140,7 +140,7 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <span class="footer-bottom__content">© Bản quyền thuộc về Mr. Lương | Cung cấp bởi Lương</span>
+                <span class="footer-bottom__content">© Website hiện chưa validate các trường dữ liệu</span>
             </div>
         </div>
     </footer>

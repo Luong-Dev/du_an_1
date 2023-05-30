@@ -1,3 +1,6 @@
+<!-- <?php
+var_dump($categories)
+?> -->
 <div class="container">
     <h1 class="mb-5">Danh sách danh mục</h1>
     <div class="mb-3">
@@ -17,6 +20,7 @@
                     <th>Tên loại</th>
                     <th>Hình ảnh</th>
                     <th>Mô tả</th>
+                    <th>Số lượng SP</th>
                     <th>Thao tác</th>
                 </tr>
             </thead>
@@ -38,6 +42,7 @@
                                 <img src="<?= (isset($image_url) && $image_url) ? $image_url : ""; ?>" alt="<?= (isset($image_alt) && $image_alt) ? $image_alt : ""; ?>" style="width: 30px; height: 25px;">
                             </td>
                             <td><?= (isset($description) && $description != "") ? $description : "Không có mô tả!" ?></td>
+                            <td><?= (isset($quantity_product) && $quantity_product != "") ? $quantity_product : "" ?></td>
                             <td>
                                 <!-- <a href="<?= $detail ?>" class="btn btn-outline-primary btn-sm">Chi tiết</a> -->
                                 <a href="<?= (isset($update) && $update) ? $update : ""; ?>" class="btn btn-success btn-sm">Sửa</a>

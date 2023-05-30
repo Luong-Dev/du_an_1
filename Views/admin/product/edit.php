@@ -97,9 +97,9 @@ if (isset($product)) {
                         <label for="exampleStatus" class="form-label">Trạng thái</label>
                         <select name="status" class="form-select" id="exampleStatus" aria-label="Default select example">
                             <option value="0" selected style="display: none;">Mở chọn trạng thái hàng hóa</option>
-                            <?php if (isset($arrStatus)) : ?>
+                            <?php if (isset($arrStatus) && $arrStatus) : ?>
                                 <?php foreach ($arrStatus as $key => $item) : ?>
-                                    <option value="<?= isset($key) ? ($key + 1) : "" ?>" <?= isset($key) && $key && isset($status) && $status &&  $key + 1 == $status ? "selected" : "" ?>><?= isset($item) ? $item : "" ?></option>
+                                    <option value="<?= $key + 1 ?>" <?= isset($status) && $status && $key + 1 == $status ? "selected" : "" ?>><?= isset($item) ? $item : "" ?></option>
                                 <?php endforeach; ?>
                             <?php endif; ?>
                         </select>

@@ -32,8 +32,6 @@
 
 /* header center */
 
-.header__center {}
-
 .menu-top {
     display: grid;
     grid-template-columns: 1fr 1fr 2fr;
@@ -41,8 +39,6 @@
     align-items: center;
     height: 40px;
 }
-
-.menu-hotline {}
 
 .menu-hotline__icon {
     font-size: 1.2rem;
@@ -68,8 +64,6 @@
 .menu-hotline__phone:hover {
     color: var(--textRedHover);
 }
-
-.menu-location {}
 
 .menu-location__icon {
     font-size: 1.2rem;
@@ -160,6 +154,16 @@
     border-bottom: 2px solid white;
 }
 
+.menu-nav__link::after {
+    position: absolute;
+    content: "";
+    display: block;
+    top: 90%;
+    width: 100%;
+    height: 15px;
+    background-color: transparent;
+}
+
 .menu-nav__link:hover {
     color: #01567F;
     border-bottom: 2px solid #01567F;
@@ -179,13 +183,13 @@
     top: -1px;
 }
 
-.nav-list-item {}
+.menu-nav__icon-coupons {
+    color: #dc3545;
+}
 
 .nav-list-item__icon {
     font-size: 1rem;
 }
-
-.nav-list-item__icon-down {}
 
 .nav-list-item__icon-up {
     display: none;
@@ -242,8 +246,6 @@
     margin-bottom: 5px;
     border-bottom: 1px solid #c9c9c9;
 }
-
-.menu-extend__item {}
 
 .menu-extend__category-link {
     text-decoration: none;
@@ -353,6 +355,10 @@
     display: none;
 }
 
+.header-account__hover.header-account__hover--used {
+    width: 250px;
+}
+
 .header-account__hover::before {
     content: "";
     border-width: 6px 6px;
@@ -378,6 +384,19 @@
 .header-account__hover-register:hover,
 .header-account__hover-login:hover {
     background-color: var(--mainColor);
+    color: white;
+}
+
+.header-account__hover-name {
+    font-size: 1.4rem;
+    color: #333;
+    padding: 15px 20px 0;
+}
+
+.header-account__hover-content {
+    color: #01567F;
+    font-weight: 500;
+    text-transform: capitalize;
 }
 
 .header-cart {
@@ -496,8 +515,6 @@
 .header-have-product-item__img {
     width: 100%;
 }
-
-.have-product-item__container {}
 
 .have-product-item__wrap-tittle {
     display: flex;
@@ -647,8 +664,6 @@
     column-gap: 20px;
 }
 
-.footer-info {}
-
 .footer__tittles {
     font-size: 1.5rem;
     text-transform: uppercase;
@@ -656,8 +671,6 @@
     margin-bottom: 15px;
     letter-spacing: 0.5px;
 }
-
-.footer-info__tittle {}
 
 .footer-info__description {
     font-size: 1.4rem;
@@ -717,8 +730,6 @@
     border-radius: 50%;
     display: inline-block;
 }
-
-.footer-news {}
 
 .footer-news__wrap {
     display: grid;

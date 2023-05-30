@@ -1,12 +1,13 @@
 <?php
 include_once "./Models/Db.php";
 
-function getCategoriesInProduct()
-{
-    $sql = "SELECT `id` , `name` FROM `categories` ORDER BY id DESC";
+// admin
+// function getCategoriesInProduct()
+// {
+//     $sql = "SELECT `id` , `name` FROM `categories` ORDER BY id DESC";
 
-    return pdo_query($sql);
-}
+//     return pdo_query($sql);
+// }
 
 function getProducts($categoryId = 0, $productSearch = "")
 {
@@ -50,4 +51,39 @@ function deleteProduct($id)
 {
     $sql = "DELETE FROM `products` WHERE id = " . $id;
     pdo_execute($sql);
+}
+
+// user
+function getCategoriesInProduct()
+{
+    $sql = "SELECT CG.id, CG.name , CG.description, CG.image_url,CG.image_alt, COUNT(PD.category_id) AS 'quantity_product' FROM `categories` AS CG
+    LEFT JOIN products AS PD ON CG.id = PD.category_id
+    GROUP BY CG.id
+    ORDER BY id DESC";
+
+    return pdo_query($sql);
+}
+
+function getProductsInUser($categoryId = 0, $productSearch = "", $sort = "id", $limit = 12)
+{
+    $sql = "SELECT * FROM `products` WHERE 1 ";
+    if ($categoryId != 0) {
+        $sql .= "AND `category_id` = $categoryId";
+    }
+    if ($productSearch != "") {
+        $sql .= "AND `name` LIKE '%$productSearch%'";
+    }
+
+    $sql .= " ORDER BY $sort DESC LIMIT $limit";
+
+    return pdo_query($sql);
+}
+
+function get10RelatedProducts($categoryId, $productId)
+{
+    $sql = "SELECT * FROM `products` WHERE 
+    category_id = $categoryId AND id <> $productId
+    ORDER BY id DESC LIMIT 10";
+
+    return pdo_query($sql);
 }
